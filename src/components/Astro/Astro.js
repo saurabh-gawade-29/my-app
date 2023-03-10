@@ -48,7 +48,7 @@ const Astro = () => {
             role="link"
             onClick={() => openInNewTab(hdURL)}
           >
-            HD Image
+            👉 Click Here To Open HD Image 👈
           </button>
           <p className="card-text">
             <small className="text-muted">{cardDate}</small>

@@ -86,33 +86,33 @@ const User = () => {
           <div className="card">
             <div className="card-header display-6">Location</div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Street: </span>
                 <span>
                   {streetNumber} {street}
                 </span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">City: </span>
                 <span>{city}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">State: </span>
                 <span>{state}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Country: </span>
                 <span>{country}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Postcode: </span>
                 <span>{postcode}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Latitude: </span>
                 <span>{latitude}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">longitude: </span>
                 <span>{longitude}</span>
               </li>
@@ -149,27 +149,27 @@ const User = () => {
           <div className="card">
             <div className="card-header display-6">Personal Details</div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">DOB: </span>
                 <span>{dob}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Age: </span>
                 <span>{age}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Phone: </span>
                 <span>{phone}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Cell: </span>
                 <span>{cell}</span>
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Email: </span>
                 {email}
               </li>
-              <li className="list-group-item">
+              <li className="list-group-item text-start">
                 <span className="fw-bold">Gender: </span>
                 <span>{gender}</span>
               </li>
