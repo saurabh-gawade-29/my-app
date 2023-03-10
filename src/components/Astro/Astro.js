@@ -40,7 +40,7 @@ const Astro = () => {
     <div>
       <div className="card mb-3 ">
         <img src={img} className="card-img-top my-astro-img " alt={mediaType} />
-        <div className="card-body">
+        <div className="card-body text-center">
           <h5 className="card-title">{cardTitle}</h5>
           <p className="card-text">{cardDis}</p>
           <button
