@@ -19,17 +19,17 @@ const Astro = () => {
       // debugger;
       console.log(response, "Response");
       setPost(response.data);
-      console.log(post, "set POST");
+      let POST = response.data;
+      console.log(POST, "setPOST");
       // SetState Here
-      setCardTitle(post.title);
-      setCardDis(post.explanation);
-      setCardDate(post.date);
-      setImg(post.url);
-      setMediaType(post.media_type);
-      setHdURL(post.hdurl);
+      setCardTitle(POST.title);
+      setCardDis(POST.explanation);
+      setCardDate(POST.date);
+      setImg(POST.url);
+      setMediaType(POST.media_type);
+      setHdURL(POST.hdurl);
     });
-  }, [post]);
-  // TODO: Dependency of post - setPost in imp otherwise useEffect not Call
+  }, []);
 
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
