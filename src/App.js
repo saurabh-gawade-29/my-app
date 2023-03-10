@@ -6,6 +6,7 @@ import Astro from "./components/Astro/Astro";
 import About from "./components/About/About";
 import { Routes, Route } from "react-router-dom";
 import User from "./components/User/User";
+import Joke from "./components/Joke/Joke";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Astro />} />
           <Route path="user" element={<User />} />
           <Route path="about" element={<About />} />
+          <Route path="joke" element={<Joke />} />
         </Routes>
       </div>
 
