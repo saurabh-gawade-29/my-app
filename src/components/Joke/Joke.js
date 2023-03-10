@@ -60,11 +60,11 @@ const Joke = () => {
       <div>
         <div className="d-flex justify-content-between">
           <p className="text-end">
-            <span className="joke-cat">Category: </span>
+            <span className="joke-cat fw-bold">Category: </span>
             <span className="joke-sub-cat ">{category}</span>
           </p>
           <p className="text-end">
-            <span className="joke-cat">Type: </span>
+            <span className="joke-cat fw-bold">Type: </span>
             <span className="joke-sub-cat ">{type}</span>
           </p>
         </div>
