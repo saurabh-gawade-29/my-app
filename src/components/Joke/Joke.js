@@ -32,7 +32,7 @@ const Joke = () => {
         if (POST.type === "single") {
           debugger;
           setSetup(POST.joke);
-          setBtn_check(true);
+          setBtn_check("none");
         } else {
           setSetup(POST.setup);
         }
@@ -93,9 +93,9 @@ const Joke = () => {
                 <h2 className="display-4">{setup}</h2>
                 {/* Delivery */}
                 <button
-                  disabled={btn_check}
+                  style={{ display: btn_check }}
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn mat-balck-btn"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 >
@@ -114,7 +114,7 @@ const Joke = () => {
                       <div className="modal-footer">
                         <button
                           type="button"
-                          className="btn btn-secondary"
+                          className="btn mat-balck-btn"
                           data-bs-dismiss="modal"
                         >
                           Close

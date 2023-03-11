@@ -65,7 +65,7 @@ const Astro = () => {
             <h5 className="card-title display-6">{cardTitle}</h5>
             <p className="card-text">{cardDis}</p>
             <button
-              className="btn btn-secondary my-2"
+              className="btn mat-balck-btn my-2"
               role="link"
               onClick={() => openInNewTab(hdURL)}
             >
