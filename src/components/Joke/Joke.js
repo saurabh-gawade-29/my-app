@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Joke.css";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const baseURL = "https://v2.jokeapi.dev/joke/Any";
 
@@ -18,8 +19,11 @@ const Joke = () => {
   const [myChecked5, setMyChecked5] = useState(false);
   const [myChecked6, setMyChecked6] = useState(false);
   const [safe, setSafe] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#e84118");
 
   const getJoke = () => {
+    setLoading(true);
     axios
       .get(baseURL)
       .then((response) => {
@@ -45,6 +49,7 @@ const Joke = () => {
         setType(POST.type);
         setDelivery(POST.delivery);
         setPost(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
@@ -56,167 +61,184 @@ const Joke = () => {
 
   return (
     <div>
-      <h1 className="text-center display-6">JOKE OF THE DAY</h1>
-      <div>
-        <div className="d-flex justify-content-between">
-          <p className="text-end">
-            <span className="joke-cat fw-bold">Category: </span>
-            <span className="joke-sub-cat ">{category}</span>
-          </p>
-          <p className="text-end">
-            <span className="joke-cat fw-bold">Type: </span>
-            <span className="joke-sub-cat ">{type}</span>
-          </p>
-        </div>
-        <div className="card shadow">
-          <div className="card-body text-center">
-            <h2 className="display-4">{setup}</h2>
-            {/* Delivery */}
-            <button
-              disabled={btn_check}
-              type="button"
-              className="btn btn-secondary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              ANSWER
-            </button>
-            <div
-              className="modal fade"
-              id="exampleModal"
-              tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content">
-                  <div className="modal-body display-4">{delivery}</div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="my-4">
-              <div className="d-flex flex-column justify-content-around flex-md-row flex-sm-column">
-                <div className="check-wrap">
-                  <p className="joke-cat fw-bold">JOKE TYPE:</p>
-                </div>
-                <div className="check-wrap">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    onChange={() => {}}
-                    id="flexCheckChecked"
-                    checked={myChecked1}
-                  />
-                  <label
-                    className="form-check-label px-1"
-                    htmlFor="flexCheckChecked"
-                  >
-                    nsfw
-                  </label>
-                </div>
-                <div className="check-wrap">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    onChange={() => {}}
-                    id="flexCheckChecked"
-                    checked={myChecked2}
-                  />
-                  <label
-                    className="form-check-label px-1"
-                    htmlFor="flexCheckChecked"
-                  >
-                    religious
-                  </label>
-                </div>
-                <div className="check-wrap">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    onChange={() => {}}
-                    id="flexCheckChecked"
-                    checked={myChecked3}
-                  />
-                  <label
-                    className="form-check-label px-1"
-                    htmlFor="flexCheckChecked"
-                  >
-                    political
-                  </label>
-                </div>
-                <div className="check-wrap">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    onChange={() => {}}
-                    id="flexCheckChecked"
-                    checked={myChecked4}
-                  />
-                  <label
-                    className="form-check-label px-1"
-                    htmlFor="flexCheckChecked"
-                  >
-                    racist
-                  </label>
-                </div>
-                <div className="check-wrap">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    onChange={() => {}}
-                    id="flexCheckChecked"
-                    checked={myChecked5}
-                  />
-                  <label
-                    className="form-check-label px-1"
-                    htmlFor="flexCheckChecked"
-                  >
-                    sexist
-                  </label>
-                </div>
-                <div className="check-wrap">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    onChange={() => {}}
-                    id="flexCheckChecked"
-                    checked={myChecked6}
-                  />
-                  <label
-                    className="form-check-label px-1"
-                    htmlFor="flexCheckChecked"
-                  >
-                    explicit
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div className="safeOrNot">
-              <p className="text-cebter">
-                <span className="joke-cat fw-bold">SAFE OR NOT: </span>
-                <span className="joke-sub-cat ">
-                  {safe === true ? "SAFE" : "NOT SAFE"}
-                </span>
+      {loading === true ? (
+        <>
+          <div className="myLoader">
+            <ClipLoader
+              className="myLoader"
+              color={color}
+              loading={loading}
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <h1 className="text-center display-6">JOKE OF THE DAY</h1>
+          <div>
+            <div className="d-flex justify-content-between">
+              <p className="text-end">
+                <span className="joke-cat fw-bold">Category: </span>
+                <span className="joke-sub-cat ">{category}</span>
+              </p>
+              <p className="text-end">
+                <span className="joke-cat fw-bold">Type: </span>
+                <span className="joke-sub-cat ">{type}</span>
               </p>
             </div>
+            <div className="card shadow">
+              <div className="card-body text-center">
+                <h2 className="display-4">{setup}</h2>
+                {/* Delivery */}
+                <button
+                  disabled={btn_check}
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  ANSWER
+                </button>
+                <div
+                  className="modal fade"
+                  id="exampleModal"
+                  tabIndex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-body display-4">{delivery}</div>
+                      <div className="modal-footer">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="my-4">
+                  <div className="d-flex flex-column justify-content-around flex-md-row flex-sm-column">
+                    <div className="check-wrap">
+                      <p className="joke-cat fw-bold">JOKE TYPE:</p>
+                    </div>
+                    <div className="check-wrap">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        onChange={() => {}}
+                        id="flexCheckChecked"
+                        checked={myChecked1}
+                      />
+                      <label
+                        className="form-check-label px-1"
+                        htmlFor="flexCheckChecked"
+                      >
+                        nsfw
+                      </label>
+                    </div>
+                    <div className="check-wrap">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        onChange={() => {}}
+                        id="flexCheckChecked"
+                        checked={myChecked2}
+                      />
+                      <label
+                        className="form-check-label px-1"
+                        htmlFor="flexCheckChecked"
+                      >
+                        religious
+                      </label>
+                    </div>
+                    <div className="check-wrap">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        onChange={() => {}}
+                        id="flexCheckChecked"
+                        checked={myChecked3}
+                      />
+                      <label
+                        className="form-check-label px-1"
+                        htmlFor="flexCheckChecked"
+                      >
+                        political
+                      </label>
+                    </div>
+                    <div className="check-wrap">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        onChange={() => {}}
+                        id="flexCheckChecked"
+                        checked={myChecked4}
+                      />
+                      <label
+                        className="form-check-label px-1"
+                        htmlFor="flexCheckChecked"
+                      >
+                        racist
+                      </label>
+                    </div>
+                    <div className="check-wrap">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        onChange={() => {}}
+                        id="flexCheckChecked"
+                        checked={myChecked5}
+                      />
+                      <label
+                        className="form-check-label px-1"
+                        htmlFor="flexCheckChecked"
+                      >
+                        sexist
+                      </label>
+                    </div>
+                    <div className="check-wrap">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value=""
+                        onChange={() => {}}
+                        id="flexCheckChecked"
+                        checked={myChecked6}
+                      />
+                      <label
+                        className="form-check-label px-1"
+                        htmlFor="flexCheckChecked"
+                      >
+                        explicit
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="safeOrNot">
+                  <p className="text-cebter">
+                    <span className="joke-cat fw-bold">SAFE OR NOT: </span>
+                    <span className="joke-sub-cat ">
+                      {safe === true ? "SAFE" : "NOT SAFE"}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };

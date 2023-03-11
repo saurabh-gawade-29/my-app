@@ -3,3 +3,9 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
+
+.myLoader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
