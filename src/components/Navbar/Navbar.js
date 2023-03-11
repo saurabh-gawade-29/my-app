@@ -36,7 +36,7 @@ const Navbar = () => {
                   to="/user"
                   activeclassname="active"
                 >
-                  RandomUser
+                  RandomUsers
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -45,7 +45,16 @@ const Navbar = () => {
                   to="/joke"
                   activeclassname="active"
                 >
-                  Joke
+                  Jokes
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link font-weight-bold"
+                  to="/dog"
+                  activeclassname="active"
+                >
+                  Dogs
                 </NavLink>
               </li>
               <li className="nav-item">
