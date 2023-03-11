@@ -104,7 +104,7 @@ const Joke = () => {
               </div>
             </div>
             <div className="my-4">
-              <div className="d-flex justify-content-between">
+              <div className="d-flex flex-column justify-content-around flex-md-row flex-sm-column">
                 <div className="check-wrap">
                   <p className="joke-cat fw-bold">JOKE TYPE:</p>
                 </div>
