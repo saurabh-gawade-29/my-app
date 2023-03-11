@@ -38,13 +38,13 @@ const Astro = () => {
   if (!post) return null;
   return (
     <div>
-      <div className="card mb-3 ">
-        <img src={img} className="card-img-top my-astro-img " alt={mediaType} />
+      <div className="card mb-3 shadow">
+        <img src={img} className="card-img-top my-astro-img" alt={mediaType} />
         <div className="card-body text-center">
-          <h5 className="card-title">{cardTitle}</h5>
+          <h5 className="card-title display-6">{cardTitle}</h5>
           <p className="card-text">{cardDis}</p>
           <button
-            className="btn btn-sm btn-secondary my-2"
+            className="btn btn-secondary my-2"
             role="link"
             onClick={() => openInNewTab(hdURL)}
           >

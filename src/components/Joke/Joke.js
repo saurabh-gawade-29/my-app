@@ -56,7 +56,7 @@ const Joke = () => {
 
   return (
     <div>
-      <h1 className="text-center">JOKE OF THE DAY</h1>
+      <h1 className="text-center display-6">JOKE OF THE DAY</h1>
       <div>
         <div className="d-flex justify-content-between">
           <p className="text-end">
@@ -68,7 +68,7 @@ const Joke = () => {
             <span className="joke-sub-cat ">{type}</span>
           </p>
         </div>
-        <div className="card">
+        <div className="card shadow">
           <div className="card-body text-center">
             <h2 className="display-4">{setup}</h2>
             {/* Delivery */}
@@ -105,6 +105,9 @@ const Joke = () => {
             </div>
             <div className="my-4">
               <div className="d-flex justify-content-between">
+                <div className="check-wrap">
+                  <p className="joke-cat fw-bold">JOKE TYPE:</p>
+                </div>
                 <div className="check-wrap">
                   <input
                     className="form-check-input"

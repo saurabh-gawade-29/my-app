@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="container my-4">
+      <div className="container my-5">
         <Routes>
           <Route path="/" element={<Astro />} />
           <Route path="user" element={<User />} />

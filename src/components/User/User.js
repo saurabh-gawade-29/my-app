@@ -83,7 +83,7 @@ const User = () => {
       <div className="text-center display-6 my-4">Random Fake Profile</div>
       <div className="row">
         <div className="col-12 col-sm-12 col-md-4 col-lg-4">
-          <div className="card">
+          <div className="card shadow">
             <div className="card-header display-6">Location</div>
             <ul className="list-group list-group-flush">
               <li className="list-group-item text-start">
@@ -120,7 +120,7 @@ const User = () => {
           </div>
         </div>
         <div className="col-12 col-sm-12 col-md-4 col-lg-4">
-          <div className="card">
+          <div className="card shadow">
             <img
               src={profile}
               className="card-img-top img-fluid"
@@ -146,7 +146,7 @@ const User = () => {
           </div>
         </div>
         <div className="col-12 col-sm-12 col-md-4 col-lg-4">
-          <div className="card">
+          <div className="card shadow">
             <div className="card-header display-6">Personal Details</div>
             <ul className="list-group list-group-flush">
               <li className="list-group-item text-start">
