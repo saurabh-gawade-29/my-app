@@ -1,10 +1,10 @@
 import React from "react";
-import "./Navbar.css";
+import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="">
+    <div className="lucifer-main-navbar">
       <nav className="navbar navbar-expand-lg shadow">
         <div className="container-fluid">
           <div className="navbar-brand lucifer-logo">LUCIFER</div>
