@@ -61,7 +61,11 @@ const Dog = () => {
             </div>
           </div>
           <div className="text-center my-4">
-            <button type="button" class="btn mat-balck-btn" onClick={getDog}>
+            <button
+              type="button"
+              className="btn mat-balck-btn"
+              onClick={getDog}
+            >
               Next
             </button>
           </div>
