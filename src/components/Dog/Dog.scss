@@ -1,5 +1,15 @@
 .wrap-dog {
+  display: flex;
+  justify-content: center;
+
   .my-dog-card {
+    width: 80vw;
+    height: 500px;
+  }
+
+  .my-dog-img {
     object-fit: contain;
+    width: 80vw;
+    height: 500px;
   }
 }
