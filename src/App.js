@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import User from "./components/User/User";
 import Joke from "./components/Joke/Joke";
 import Dog from "./components/Dog/Dog";
+import Homepage from "./components/Homepage/Homepage";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Navbar />
       <div className="container my-5">
         <Routes>
-          <Route path="/" element={<Astro />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="astro" element={<Astro />} />
           <Route path="user" element={<User />} />
           <Route path="about" element={<About />} />
           <Route path="joke" element={<Joke />} />

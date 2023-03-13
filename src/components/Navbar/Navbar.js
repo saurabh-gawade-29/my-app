@@ -7,7 +7,9 @@ const Navbar = () => {
     <div className="lucifer-main-navbar">
       <nav className="navbar navbar-expand-lg shadow">
         <div className="container-fluid">
-          <div className="navbar-brand lucifer-logo">LUCIFER</div>
+          <NavLink className="navbar-brand udaan-full" to="/">
+            <div className="navbar-brand lucifer-logo">LUCIFER</div>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -20,46 +22,10 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav d-flex justify-content-end w-100">
               <li className="nav-item">
                 <NavLink
-                  className="nav-link font-weight-bold"
-                  to="/"
-                  activeclassname="active"
-                >
-                  Astro
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link font-weight-bold"
-                  to="/user"
-                  activeclassname="active"
-                >
-                  RandomUsers
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link font-weight-bold"
-                  to="/joke"
-                  activeclassname="active"
-                >
-                  Jokes
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link font-weight-bold"
-                  to="/dog"
-                  activeclassname="active"
-                >
-                  Dogs
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link font-weight-bold"
+                  className="nav-link fw-bold"
                   to="/about"
                   activeclassname="active"
                 >

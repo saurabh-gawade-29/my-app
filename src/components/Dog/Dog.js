@@ -51,7 +51,7 @@ const Dog = () => {
               <img
                 src={img}
                 className="card-img my-dog-img"
-                alt="DOG IMAGE IS HERE"
+                alt="DOG_IMAGE_IS_HERE"
               />
               <div className="card-img-overlay">
                 <p className="card-text text-danger">
