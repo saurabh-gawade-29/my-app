@@ -15,6 +15,7 @@ const About = () => {
             <li>ASTRO: https://go-apod.herokuapp.com/apod</li>
             <li>USER: https://randomuser.me/api/</li>
             <li>JOKE: https://v2.jokeapi.dev/joke/Any</li>
+            <li>DOG: https://random.dog/woof.json</li>
           </ol>
         </div>
       </div>
