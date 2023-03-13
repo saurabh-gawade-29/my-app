@@ -19,7 +19,7 @@ const Homepage = () => {
                 Contains Information About Space & Galaxy.
               </p>
               <Link to="/astro" className="btn mat-balck-btn ">
-                Go somewhere
+                Explore
               </Link>
             </div>
           </div>
@@ -33,7 +33,7 @@ const Homepage = () => {
                 Contains Information About Random Users.
               </p>
               <Link to="/user" className="btn mat-balck-btn ">
-                Go somewhere
+                Explore
               </Link>
             </div>
           </div>
@@ -45,7 +45,7 @@ const Homepage = () => {
               <h5 className="card-title text-truncate">Daily Jokes</h5>
               <p className="card-text">Daily Laughter Dose</p>
               <Link to="/joke" className="btn mat-balck-btn ">
-                Go somewhere
+                Explore
               </Link>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Homepage = () => {
               <h5 className="card-title text-truncate">Dog Images</h5>
               <p className="card-text">Woof Woof! See My Pictures</p>
               <Link to="/dog" className="btn mat-balck-btn ">
-                Go somewhere
+                Explore
               </Link>
             </div>
           </div>
