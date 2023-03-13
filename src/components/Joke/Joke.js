@@ -237,6 +237,15 @@ const Joke = () => {
               </div>
             </div>
           </div>
+          <div className="text-center my-4">
+            <button
+              type="button"
+              className="btn mat-balck-btn"
+              onClick={getJoke}
+            >
+              Next
+            </button>
+          </div>
         </>
       )}
     </div>

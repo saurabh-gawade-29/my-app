@@ -197,6 +197,15 @@ const User = () => {
               </div>
             </div>
           </div>
+          <div className="text-center my-4">
+            <button
+              type="button"
+              className="btn mat-balck-btn"
+              onClick={primaryFunction}
+            >
+              Next
+            </button>
+          </div>
         </>
       )}
     </div>
