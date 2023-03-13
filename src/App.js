@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="container my-5">
+      <div className="container mb-5 mt-4">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="astro" element={<Astro />} />
