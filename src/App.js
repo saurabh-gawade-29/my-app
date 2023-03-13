@@ -9,6 +9,7 @@ import User from "./components/User/User";
 import Joke from "./components/Joke/Joke";
 import Dog from "./components/Dog/Dog";
 import Homepage from "./components/Homepage/Homepage";
+import Ipaddress from "./components/Ipaddress/Ipaddress";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="joke" element={<Joke />} />
           <Route path="dog" element={<Dog />} />
+          <Route path="ipaddress" element={<Ipaddress />} />
         </Routes>
       </div>
 

@@ -4,6 +4,7 @@ import astro from "../images/astro.jpg";
 import fake from "../images/fake.jpg";
 import joke from "../images/Joke.jpg";
 import dog from "../images/Dog.jpg";
+import ipadd from "../images/ipaddress.jpg";
 import { Link } from "react-router-dom";
 import "./Homepage.scss";
 
@@ -68,6 +69,20 @@ const Homepage = () => {
               </h5>
               <p className="card-text">Woof Woof! See My Pictures</p>
               <Link to="/dog" className="btn explore-btn ">
+                Explore
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-2">
+          <div className="card shadow">
+            <img src={ipadd} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title text-truncate home-card-link">
+                What Is My IP
+              </h5>
+              <p className="card-text">Contains Your Public IP Address</p>
+              <Link to="/ipaddress" className="btn explore-btn ">
                 Explore
               </Link>
             </div>
