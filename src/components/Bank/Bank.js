@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Bank.scss";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Bank = () => {
   const [myIfsc, setMyIfsc] = useState("YESB0DNB002");
@@ -22,9 +23,12 @@ const Bank = () => {
   const [iso, setIso] = useState();
   const [bankcd, setBankcd] = useState();
   const [ifsc, setIfsc] = useState();
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#e84118");
 
   const fetchDetails = () => {
     let url = `https://ifsc.razorpay.com/${myIfsc}`;
+    setLoading(true);
     axios
       .get(url)
       .then((response) => {
@@ -53,6 +57,7 @@ const Bank = () => {
         setIso(POST.ISO3166);
         setBankcd(POST.BANKCODE);
         setIfsc(POST.IFSC);
+        setLoading(false);
       })
       .catch((error) => console.error(error));
   };
@@ -62,79 +67,160 @@ const Bank = () => {
   }, []);
 
   return (
+    // {
+    //     loading === true ? <></> : <></>
+    // }
     <div>
-      <div className="mb-3">
-        <h1 className="display-6 text-center">Bank Details Using IFSC</h1>
-        <div className="row">
-          <div className="col-4"></div>
-          <div className="col-4">
-            <input
-              value={myIfsc}
-              onChange={(e) => setMyIfsc(e.target.value)}
-              type="text"
-              className="form-control shadow"
-              placeholder="Please Enter Your IFSC Code"
+      {loading === true ? (
+        <>
+          <div className="myLoader">
+            <ClipLoader
+              className="myLoader"
+              color={color}
+              loading={loading}
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
             />
           </div>
-          <div className="col-4"></div>
-        </div>
-        <div className="text-center">
-          <button
-            className="btn mat-balck-btn my-4 shadow"
-            onClick={fetchDetails}
-          >
-            Get Deatils
-          </button>
-        </div>
-      </div>
-      <div className="output-card">
-        <div className="container">
-          <div className="card shadow">
-            <div className="card-body">
-              <h5 className="card-title">BANK: {bankName}</h5>
-              <h6 className="card-subtitle text-muted">BRANCH: {branchName}</h6>
-              <h6 className="card-text mb-0 text-muted">ADDRESS: {address}</h6>
-              <h6 className="card-text mb-0 text-muted">CONTACT: {contact}</h6>
-              <div className="row">
-                <div className="col-12 col-sm-12 col-md-4 col-lg-4">
-                  <div className="card my-2">
-                    <div className="card-header fw-bold">Location</div>
-                    <ul className="list-group list-group-flush">
-                      <li className="list-group-item">CENTRE: {center}</li>
-                      <li className="list-group-item">CITY: {city}</li>
-                      <li className="list-group-item">DISTRICT: {district}</li>
-                      <li className="list-group-item">STATE: {state}</li>
-                    </ul>
+        </>
+      ) : (
+        <>
+          <div className="mb-3">
+            <h1 className="display-6 text-center">Bank Details Using IFSC</h1>
+            <div className="row">
+              <div className="col-4"></div>
+              <div className="col-4">
+                <input
+                  value={myIfsc}
+                  onChange={(e) => setMyIfsc(e.target.value)}
+                  type="text"
+                  className="form-control shadow"
+                  placeholder="Please Enter Your IFSC Code"
+                />
+              </div>
+              <div className="col-4"></div>
+            </div>
+            <div className="text-center">
+              <button
+                className="btn mat-balck-btn my-4 shadow"
+                onClick={fetchDetails}
+              >
+                Get Deatils
+              </button>
+            </div>
+          </div>
+          <div className="output-card">
+            <div className="container">
+              <div className="card shadow">
+                <div className="card-body">
+                  <div className="bank-basic-contain ">
+                    <h5 className="card-title text-danger mb-2">
+                      {bankName.toUpperCase()}
+                    </h5>
+                    <h6 className="card-subtitle text-muted mb-2">
+                      <span className="text-dark fw-bold">BRANCH: </span>
+                      {branchName}
+                    </h6>
+                    <h6 className="card-text mb-0 text-muted mb-2">
+                      <span className="text-dark fw-bold">ADDRESS: </span>
+                      {address}
+                    </h6>
+                    <h6 className="card-text mb-0 text-muted mb-2">
+                      <span className="text-dark fw-bold">CONTACT: </span>
+                      {contact}
+                    </h6>
                   </div>
-                </div>
-                <div className="col-12 col-sm-12 col-md-4 col-lg-4">
-                  <div className="card my-2">
-                    <div className="card-header fw-bold">Other</div>
-                    <ul className="list-group list-group-flush">
-                      <li className="list-group-item">ISO3166: {iso}</li>
-                      <li className="list-group-item">MICR: {micr}</li>
-                      <li className="list-group-item">BANKCODE: {bankcd}</li>
-                      <li className="list-group-item">IFSC: {ifsc}</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-12 col-sm-12 col-md-4 col-lg-4">
-                  <div className="card my-2">
-                    <div className="card-header fw-bold">Mode Of Payment</div>
-                    <ul className="list-group list-group-flush">
-                      <li className="list-group-item">IMPS: {imps}</li>
-                      <li className="list-group-item">UPI: {upi}</li>
-                      <li className="list-group-item">RTGS: {rtgs}</li>
-                      <li className="list-group-item">NEFT: {neft}</li>
-                      <li className="list-group-item">SWIFT: {swift}</li>
-                    </ul>
+
+                  <div className="row">
+                    <div className="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div className="card my-2">
+                        <div className="card-header fw-bold">Location</div>
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">CENTRE: </span>
+                            <span>{center}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">CITY: </span>
+                            {city}
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">
+                              DISTRICT:{" "}
+                            </span>
+                            <span>{district}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">STATE: </span>
+                            <span className="">{state}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div className="card my-2">
+                        <div className="card-header fw-bold">Other</div>
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">
+                              ISO3166:{" "}
+                            </span>
+                            <span>{iso}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">MICR:</span>
+                            <span>{micr}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">
+                              BANKCODE:{" "}
+                            </span>
+                            <span>{bankcd}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">IFSC: </span>
+                            <span>{ifsc}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div className="card my-2">
+                        <div className="card-header fw-bold">
+                          Mode Of Payment
+                        </div>
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">IMPS: </span>
+                            <span>{imps}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">UPI: </span>
+                            <span>{upi}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">RTGS: </span>
+                            <span>{rtgs}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">NEFT: </span>
+                            <span>{neft}</span>
+                          </li>
+                          <li className="list-group-item">
+                            <span className="fw-bold text-muted">SWIFT: </span>
+                            <span>{swift}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };
