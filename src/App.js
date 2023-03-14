@@ -10,6 +10,7 @@ import Joke from "./components/Joke/Joke";
 import Dog from "./components/Dog/Dog";
 import Homepage from "./components/Homepage/Homepage";
 import Ipaddress from "./components/Ipaddress/Ipaddress";
+import Bored from "./components/Bored/Bored";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="joke" element={<Joke />} />
           <Route path="dog" element={<Dog />} />
           <Route path="ipaddress" element={<Ipaddress />} />
+          <Route path="bored" element={<Bored />} />
         </Routes>
       </div>
 
