@@ -5,6 +5,8 @@ import App from "./App";
 //TODO: This is Imports for Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+// TODO: This is for react Toastify
+import "react-toastify/dist/ReactToastify.css";
 import $ from "jquery";
 import Popper from "popper.js";
 // TODO: Imp
