@@ -16,6 +16,9 @@ const About = () => {
             <li>USER: https://randomuser.me/api/</li>
             <li>JOKE: https://v2.jokeapi.dev/joke/Any</li>
             <li>DOG: https://random.dog/woof.json</li>
+            <li>What is my IP: https://api.ipify.org/?format=json</li>
+            <li>BoredAPI: https://www.boredapi.com/api/activity</li>
+            <li>IFSC: https://ifsc.razorpay.com/YESB0DNB002</li>
           </ol>
         </div>
       </div>
