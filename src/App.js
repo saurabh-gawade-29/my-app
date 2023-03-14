@@ -11,6 +11,7 @@ import Dog from "./components/Dog/Dog";
 import Homepage from "./components/Homepage/Homepage";
 import Ipaddress from "./components/Ipaddress/Ipaddress";
 import Bored from "./components/Bored/Bored";
+import Bank from "./components/Bank/Bank";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <div className="container mb-5 mt-4">
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/ifsc" element={<Bank />} />
           <Route path="astro" element={<Astro />} />
           <Route path="user" element={<User />} />
           <Route path="about" element={<About />} />
